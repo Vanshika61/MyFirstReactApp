@@ -8,30 +8,35 @@ export default function TextForm(props) {
         // console.log("Uppercase was clicked" + text);
         let newText = text.toUpperCase();
         setText(newText)
-    }
-    const handleLoClick =()=>{
+        props.showAlert('Converted to uppercase', 'success');
+      }
+      const handleLoClick =()=>{
         // console.log("Uppercase was clicked" + text);
         let newText = text.toLowerCase();
         setText(newText)
-    }
-    // const handleTitleClick =(text)=>{
-                 
-    // }
-    const handleCopy = ()=>{
-      var text = document.getElementById("myText");
-      text.select();
-      navigator.clipboard.writeText(text.value);
-    }
-
-    const handleExtraSpaces = ()=>{
-      let newText = text.split(/[ ]+/);
-      setText(newText.join(" "))
-    }
-    
-    const handleClearClick = ()=>{
-        let newText = "";
-        setText(newText)
-    }
+        props.showAlert('Converted to lowercase', 'success');
+      }
+      // const handleTitleClick =(text)=>{
+        
+        // }
+      const handleCopy = ()=>{
+          var text = document.getElementById("myText");
+          text.select();
+          navigator.clipboard.writeText(text.value);
+          props.showAlert('Copied to clipboard', 'success');
+      }
+        
+      const handleExtraSpaces = ()=>{
+          let newText = text.split(/[ ]+/);
+          setText(newText.join(" "))
+          props.showAlert('Extraspaces has been removed', 'success');
+      }
+        
+      const handleClearClick = ()=>{
+          let newText = "";
+          setText(newText)
+          props.showAlert('Text has been Cleared', 'success');
+      }
     const handleOnChange =(event)=>{
         // console.log("On Change")
         setText(event.target.value)
