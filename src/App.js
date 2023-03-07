@@ -26,12 +26,21 @@ function App() {
       setBtnText('Enable LightMode')
       document.body.style.backgroundColor = '#042743'
       showAlert('Dark mode has been enabled', 'success');
+      document.title = 'TextUtils - Dark Mode';
+      
+      // setInterval(() => {
+      //   document.title = 'TextUtils is amazing';
+      // }, 2000);
+      // setInterval(() => {
+      //   document.title = 'Install TextUtils now';
+      // }, 1500);
     }
     else{
       setMode('light')
       setBtnText('Enable DarkMode')
       document.body.style.backgroundColor = 'white'
       showAlert('Light mode has been enabled', 'success');
+      document.title = 'TextUtils - Light Mode'
     }
   }
   return (
